@@ -1,6 +1,6 @@
 # Prepare profiles chrome to [API_YouTube](https://github.com/ArtDanger/API_YouTube)
 
-You can use `user_data_dir="D:/UC/User Data"` in [API_YouTube](https://github.com/ArtDanger/API_YouTube) or [undetected_driver](https://github.com/ultrafunkamsterdam/undetected-chromedriver) thereby increase your safety.
+You can use `user_data_dir="D:/Profiles/User Data"` in [API_YouTube](https://github.com/ArtDanger/API_YouTube) or [undetected_driver](https://github.com/ultrafunkamsterdam/undetected-chromedriver) thereby increase your safety.
 
 ## Version 1.0
 ###### This program will work if you don't have any `Profiles` in Chrome.
