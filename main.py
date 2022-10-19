@@ -6,6 +6,16 @@ from pathlib import Path
 from subprocess import call
 
 
+def file_exists(path_to_file):
+    """Check file exists by path"""
+    path = Path(path_to_file)
+
+    if path.is_file() or path.is_dir():
+        return True
+
+    return False
+
+
 def path_near_exefile(filename):
     """:return path to file near executable file"""
     if getattr(sys, 'frozen', False):
@@ -23,7 +33,7 @@ def data_processing():
 
 
 def create_folder():
-    if not os.path.exists(path_near_exefile("Profiles")):
+    if not file_exists(path_near_exefile("Profiles")):
         os.makedirs(path_near_exefile("Profiles"))
 
 
@@ -46,7 +56,11 @@ def copy_chrome_folder():
 
 
 def create_profile(new_path_profile):
-    path_to_chrome = r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+    if file_exists(r"C:\Program Files\Google\Chrome\Application\chrome.exe"):
+        path_to_chrome = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+    else:
+        path_to_chrome = r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+
     path_profile = f"{new_path_profile}"  # User Data
     command = f'"{path_to_chrome}" --user-data-dir="{path_profile}"'
     call(command)
